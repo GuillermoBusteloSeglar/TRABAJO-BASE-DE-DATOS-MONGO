@@ -21,3 +21,18 @@ db.yumanyi.find({$or:[{ "Marca": {$not: {$regex: /s$/, $options: 'i'}}}, {"Fecha
 
 //Con esta consulta se mostraran todos los datos cuya fecha de entrada no sea igual a la dada y cuya cantidad no sea menor o igual que 20
 db.yumanyi.find({$nor:[{ "FechaEntrada": {"$eq": new Date(2020-12-9)}}, {"qty": {lte:20}}]})
+//Con esta consulta se asignara un valor a Marca. Este valor dependera de si el precio es mayor que 80.
+db.yumanyi.aggregate(
+    [
+      {
+        $match: {
+          "Precio": {
+            $gt: 80
+          }
+        }
+      },
+      {
+        $count: "Marca"
+      }
+    ]
+  )
