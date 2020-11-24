@@ -7,3 +7,4 @@ A dicha base de datos se le ha insertado una coleccion la cual registra:
   3. La marca de los productos
   4. La fecha de entrada en la tienda
   5. La cantidad de cada producto
+  6. Si se dispone de stock o no de cada producto
