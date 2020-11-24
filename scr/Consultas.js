@@ -13,4 +13,4 @@ db.yumanyi.find( { Marca: { $not: { $regex: /^T/, $options: 'i' } } })
 //Con este consulta se mostraran todos los datos cuya marca no acabe en s y que este no distinga entre mayusculas y minusculas y o aquellos cuya fecha de entrada no es igual a la indicada
 db.yumanyi.find({$or:[{ "Marca": {$not: {$regex: /s$/, $options: 'i'}}}, {"FechaEntrada": {"$ne": new Date(2020-12-15)}}]})
 //Con esta consulta se mostraran todos los datos cuya fecha de entrada no sea igual a la dada y cuya cantidad no sea menor o igual que 20
-db.yumanyi.find({$nor:[{ "FechaEntrada": {"$eq": new Date(2020-12-9)}}, {"qty": {lte:20}}]}
+db.yumanyi.find({$nor:[{ "FechaEntrada": {"$eq": new Date(2020-12-9)}}, {"qty": {lte:20}}]})
