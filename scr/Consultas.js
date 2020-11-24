@@ -1,7 +1,7 @@
 //Con este consulta quiero que mongo me muestre las marcas las cuales empiecen por la letra b y que este no distinga entre mayusculas y minusculas
 db.yumanyi.find( { Marca: { $regex: /^B/, $options: 'i'} } )
 
-//Con esta consulta se mostraran todos los datos que tengan un precio igual o superior a 400
+//Con esta consulta se mostraran todos los datos que tengan una cantidad en stock menor o igual a 15 y que su marca sea Nintendo
 db.yumanyi.find({$and:[{ "qty": {lte:15}}, {"Marca":{$in:"Nintendo"}}]})
 
 //Con esta consulta se mostraran todos los datos de marca Banpresto o a quellos que su precio sea distinto de 400
